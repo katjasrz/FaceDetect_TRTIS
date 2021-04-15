@@ -1,0 +1,30 @@
+name: "facedetect_tlt"
+platform: "tensorrt_plan"
+max_batch_size: 64
+input [
+  {
+    name: "input_1"
+    data_type: TYPE_FP32
+    dims: [ 3, 416, 736 ]
+  }
+]
+output [
+  {
+    name: "output_bbox/BiasAdd"
+    data_type: TYPE_FP32
+    dims: [ 4, 26, 46 ]
+  },
+  {
+    name: "output_cov/Sigmoid"
+    data_type: TYPE_FP32
+    dims: [ 1, 26, 46 ]
+  }
+]
+instance_group [
+  {
+    count: 2
+    kind: KIND_GPU
+  }
+]
+dynamic_batching {
+}
