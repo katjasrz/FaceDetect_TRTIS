@@ -1,0 +1,6 @@
+models
+trtis_model_repo/facedetect_tlt/1/model.plan
+detection_client/capture.jpg
+detection_client/out.jpg
+detection_client/.ipynb_checkpoints
+metrics/prometheus-2.26.0-rc.0.linux-amd64
